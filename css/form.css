@@ -1,0 +1,629 @@
+/* =================================
+  Base Styles
+==================================== */
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font: 300 16px/1.5 'Merriweather', serif;
+}
+h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr, textarea {
+    margin-bottom: 1rem;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%
+}
+label, .submit-btn {
+    cursor: pointer;
+}
+label, .contact-info-fset input {
+    display: block;
+}
+.block-el {
+    display: block;
+}
+
+/* ===============
+  Font Styles
+================== */
+
+.text-center {
+    text-align: center;
+}
+.text-white {
+    color: #fff;
+}
+h1 {
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+}
+.newsletter-fset>p, .newsletter-input-container label, .newsletter-input-container p, .sub-intro, .contact-label, .select-state, .form-footer {
+    color: #89979a;
+}
+
+/* -- Font - Sizes -- */
+
+.name {
+    /* 24px / 16px */
+    -webkit-transition: font-size .3s;
+    transition: font-size .3s;
+    font-size: 1.2em;
+}
+.intro {
+    -webkit-transition: padding-top .5s;
+    transition: padding-top .5s;
+    font-size: 1.2em;
+}
+.sub-intro {
+    font-size: .9em;
+}
+.section-title {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.submit-btn {
+    font-size: 1.2em;
+}
+.submit-btn:hover {
+    opacity: .8;
+}
+
+/* ===================
+  End of Font Styles
+====================== */
+
+
+/* =================================
+  Content Layout Styles
+==================================== */
+
+
+/* ---- Containers ---- */
+
+.wrapper {
+    width: 90%;
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.form-header {
+    background: rgba(45, 57, 69, 1);
+}
+.main-title {
+    position: relative;
+    display: inline-block;
+    padding: 1.25em;
+    /* 20px / 16px */
+}
+.name {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.name::before {
+    position: absolute;
+    bottom: 6px;
+    left: -5px;
+    content: "{";
+    color: #fff;
+    font-size: 2em;
+}
+.name::after {
+    position: absolute;
+    right: -5px;
+    bottom: 6px;
+    content: "}";
+    color: #fff;
+    font-size: 2em;
+}
+
+/* ===================
+  Form Styles
+====================== */
+
+
+/* -- Input Styles --*/
+
+.form-input-container>input, .select-state, .select-findUs, textarea {
+    padding: .8em;
+    border: none;
+    border-radius: 5px;
+    background: #ebeced;
+}
+.form-input-container>input, .select-state, textarea {
+    width: 100%;
+}
+.select-findUs {
+    clear: left;
+    width: 75%;
+}
+.select-state, .select-findUs {
+    height: 3em;
+}
+::-webkit-input-placeholder {
+    text-align: right;
+}
+.input:focus, .input:active, .select-state:focus, .select-findUs:focus {
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: .25s, .35s;
+    transition-duration: .25s, .35s;
+    -webkit-transition-property: background-color, color;
+    transition-property: background-color, color;
+    color: #fff;
+    outline-width: 2px;
+    outline-style: inset;
+    outline-color: rgb(45, 57, 69);
+    background-color: rgba(45, 57, 69, .9);
+}
+
+/* -- Form Header -- */
+
+.intro {
+    margin-bottom: .25em;
+}
+.sub-intro {
+    margin-top: 0;
+    margin-bottom: .25em;
+    padding-bottom: 2.2em;
+    border-bottom: 4px solid rgb(45, 57, 69);
+    font-weight: 300;
+}
+
+/* -- Contact Fieldset-- */
+
+.contact-info-fset, .newsletter-fset {
+    padding: 0;
+    border-top: 2px solid rgb(45, 57, 69);
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+}
+.section-title {
+    float: left;
+    width: 100%;
+    padding: 1em 0 1em;
+}
+.contact-label {
+    padding: .8em 0 .5em;
+}
+
+/* --Newsletter Fieldset-- */
+
+input[type="checkbox"] {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+}
+.newsletter-input-container input {
+    margin-right: 5px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    background: #48aea5;
+}
+.form-footer {
+    padding: .5em;
+}
+.newsletter-fset label {
+    display: inline-block;
+}
+
+/* ---- ClearFix ---- */
+
+.cf:before, .cf:after {
+    display: table;
+    content: " ";
+}
+.cf:after {
+    clear: both;
+}
+
+/* ---- Media Queries ---- */
+
+@media (min-width: 768px), (orientation: landscape) {
+    /* - Font Sizing - */
+    .name {
+        font-size: 2.827em;
+    }
+    /* - Header / Nav - */
+    .name::before {
+        position: absolute;
+        bottom: 6px;
+        left: -15px;
+        font-size: 1.5em;
+    }
+    .name::after {
+        position: absolute;
+        right: -15px;
+        bottom: 6px;
+        font-size: 1.5em;
+    }
+    /* - Form - */
+    .intro {
+        padding-top: 2em;
+        -webkit-transition: padding-top .5s;
+        transition: padding-top .5s;
+    }
+    .contact-label {
+        float: left;
+        width: 20%;
+    }
+    .form-input-container {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .form-input-container>input, .select-state {
+        float: right;
+        width: 80%;
+    }
+    .select-findUs {
+        width: 35%;
+    }
+    .contact-label {
+        padding: .8em 0 .8em;
+        white-space: nowrap;
+    }
+    .newsletter-fset>p, .newsletter-fset label, .newsletter-input-container>p, .sub-intro, .contact-label, .form-footer {
+        color: #405169;
+    }
+    .newsletter-fset>p, .newsletter-fset label {
+        margin-bottom: .25em;
+        padding-bottom: .5em;
+    }
+}
+@media (min-width: 1024px) {
+    /* -- Font - Sizes -- */
+    .name {
+        /* 24px / 16px */
+        -webkit-transition: font-size .3s;
+        transition: font-size .3s;
+        font-size: 3.375em;
+    }
+    .intro {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        -webkit-transition: padding-top .5s;
+        transition: padding-top .5s;
+        font-size: 2.25em;
+    }
+    .sub-intro {
+        margin-top: 0;
+        padding-bottom: 2rem;
+        font-size: 1em;
+    }
+    .section-title {
+        font-size: 2em;
+        font-weight: 700;
+    }
+    .submit-btn {
+        font-size: 1.5em;
+    }
+}/* =================================
+  Base Styles
+==================================== */
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font: 300 16px/1.5 'Merriweather', serif;
+}
+h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr, textarea {
+    margin-bottom: 1rem;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%
+}
+label, .submit-btn {
+    cursor: pointer;
+}
+label, .contact-info-fset input {
+    display: block;
+}
+.block-el {
+    display: block;
+}
+
+/* ===============
+  Font Styles
+================== */
+
+.text-center {
+    text-align: center;
+}
+.text-white {
+    color: #fff;
+}
+h1 {
+    text-transform: uppercase;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+}
+.newsletter-fset>p, .newsletter-input-container label, .newsletter-input-container p, .sub-intro, .contact-label, .select-state, .form-footer {
+    color: #89979a;
+}
+
+/* -- Font - Sizes -- */
+
+.name {
+    /* 24px / 16px */
+    -webkit-transition: font-size .3s;
+    transition: font-size .3s;
+    font-size: 1.2em;
+}
+.intro {
+    -webkit-transition: padding-top .5s;
+    transition: padding-top .5s;
+    font-size: 1.2em;
+}
+.sub-intro {
+    font-size: .9em;
+}
+.section-title {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.submit-btn {
+    font-size: 1.2em;
+}
+.submit-btn:hover {
+    opacity: .8;
+}
+
+/* ===================
+  End of Font Styles
+====================== */
+
+
+/* =================================
+  Content Layout Styles
+==================================== */
+
+
+/* ---- Containers ---- */
+
+.wrapper {
+    width: 90%;
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.form-header {
+    background: rgba(45, 57, 69, 1);
+}
+.main-title {
+    position: relative;
+    display: inline-block;
+    padding: 1.25em;
+    /* 20px / 16px */
+}
+.name {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.name::before {
+    position: absolute;
+    bottom: 6px;
+    left: -5px;
+    content: "{";
+    color: #fff;
+    font-size: 2em;
+}
+.name::after {
+    position: absolute;
+    right: -5px;
+    bottom: 6px;
+    content: "}";
+    color: #fff;
+    font-size: 2em;
+}
+
+/* ===================
+  Form Styles
+====================== */
+
+
+/* -- Input Styles --*/
+
+.form-input-container>input, .select-state, .select-findUs, textarea {
+    padding: .8em;
+    border: none;
+    border-radius: 5px;
+    background: #ebeced;
+}
+.form-input-container>input, .select-state, textarea {
+    width: 100%;
+}
+.select-findUs {
+    clear: left;
+    width: 75%;
+}
+.select-state, .select-findUs {
+    height: 3em;
+}
+::-webkit-input-placeholder {
+    text-align: right;
+}
+.input:focus, .input:active, .select-state:focus, .select-findUs:focus {
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: .25s, .35s;
+    transition-duration: .25s, .35s;
+    -webkit-transition-property: background-color, color;
+    transition-property: background-color, color;
+    color: #fff;
+    outline-width: 2px;
+    outline-style: inset;
+    outline-color: rgb(45, 57, 69);
+    background-color: rgba(45, 57, 69, .9);
+}
+
+/* -- Form Header -- */
+
+.intro {
+    margin-bottom: .25em;
+}
+.sub-intro {
+    margin-top: 0;
+    margin-bottom: .25em;
+    padding-bottom: 2.2em;
+    border-bottom: 4px solid rgb(45, 57, 69);
+    font-weight: 300;
+}
+
+/* -- Contact Fieldset-- */
+
+.contact-info-fset, .newsletter-fset {
+    padding: 0;
+    border-top: 2px solid rgb(45, 57, 69);
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+}
+.section-title {
+    float: left;
+    width: 100%;
+    padding: 1em 0 1em;
+}
+.contact-label {
+    padding: .8em 0 .5em;
+}
+
+/* --Newsletter Fieldset-- */
+
+input[type="checkbox"] {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+}
+.newsletter-input-container input {
+    margin-right: 5px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    background: #48aea5;
+}
+.form-footer {
+    padding: .5em;
+}
+.newsletter-fset label {
+    display: inline-block;
+}
+
+/* ---- ClearFix ---- */
+
+.cf:before, .cf:after {
+    display: table;
+    content: " ";
+}
+.cf:after {
+    clear: both;
+}
+
+/* ---- Media Queries ---- */
+
+@media (min-width: 768px), (orientation: landscape) {
+    /* - Font Sizing - */
+    .name {
+        font-size: 2.827em;
+    }
+    /* - Header / Nav - */
+    .name::before {
+        position: absolute;
+        bottom: 6px;
+        left: -15px;
+        font-size: 1.5em;
+    }
+    .name::after {
+        position: absolute;
+        right: -15px;
+        bottom: 6px;
+        font-size: 1.5em;
+    }
+    /* - Form - */
+    .intro {
+        padding-top: 2em;
+        -webkit-transition: padding-top .5s;
+        transition: padding-top .5s;
+    }
+    .contact-label {
+        float: left;
+        width: 20%;
+    }
+    .form-input-container {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .form-input-container>input, .select-state {
+        float: right;
+        width: 80%;
+    }
+    .select-findUs {
+        width: 35%;
+    }
+    .contact-label {
+        padding: .8em 0 .8em;
+        white-space: nowrap;
+    }
+    .newsletter-fset>p, .newsletter-fset label, .newsletter-input-container>p, .sub-intro, .contact-label, .form-footer {
+        color: #405169;
+    }
+    .newsletter-fset>p, .newsletter-fset label {
+        margin-bottom: .25em;
+        padding-bottom: .5em;
+    }
+}
+@media (min-width: 1024px) {
+    /* -- Font - Sizes -- */
+    .name {
+        /* 24px / 16px */
+        -webkit-transition: font-size .3s;
+        transition: font-size .3s;
+        font-size: 3.375em;
+    }
+    .intro {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        -webkit-transition: padding-top .5s;
+        transition: padding-top .5s;
+        font-size: 2.25em;
+    }
+    .sub-intro {
+        margin-top: 0;
+        padding-bottom: 2rem;
+        font-size: 1em;
+    }
+    .section-title {
+        font-size: 2em;
+        font-weight: 700;
+    }
+    .submit-btn {
+        font-size: 1.5em;
+    }
+}
